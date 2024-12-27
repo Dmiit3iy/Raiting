@@ -29,4 +29,8 @@ public final class Util {
     public static List<Player> playersList(int x) {
         return IntStream.range(0, x).mapToObj(q -> new Player(randomName(), randomInt())).collect(Collectors.toList());
     }
+
+    public static List<Player> sortByScoreDesc(List<Player> players) {
+        return players.parallelStream().sorted().collect(Collectors.toList());
+    }
 }
